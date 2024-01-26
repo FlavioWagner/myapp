@@ -1,0 +1,70 @@
+/* You can add global styles to this file, and also import other style files */
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+@import "primeicons/primeicons.css";
+@import "primeflex/primeflex.css";
+@import "primeflex/primeflex.scss";
+
+html {
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (min-width: 992px) {
+  .bg_login {
+    background-image: url('/assets/images/background.jpg');
+    background-repeat: repeat;
+    background-size: cover;
+  }
+}
+
+.recuo-navtop {
+  margin-top: 4%;
+}
+
+.sidebar{
+  background-color: #fff;
+}
+
+.bg-header {
+  background-color: #008159;
+  font-family: Roboto, 'Montserrat', -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif !important;
+}
+
+.bg-footer {
+  background-color: #008159;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+
+.p-button {
+  color: #fff;
+  background-color: #1a8d6a !important;
+
+  &:hover {
+    background-color: #20c997 !important;
+  } 
+}
+
+.div-elements{  
+  display: flex;
+  gap: 5px;
+}
+
+
+// Estilos para a tabela
+.table-container {
+  @media (max-width: 767px) {
+    display: none; // Oculta em telas menores que 768 pixels (tamanhos de telas médios e menores)
+  }
+}
+
+// Estilos para o card
+.card-container {
+  @media (min-width: 768px) {
+    display: none; // Oculta em telas maiores ou iguais a 768 pixels (tamanhos de telas grandes)
+  }
+}
+
