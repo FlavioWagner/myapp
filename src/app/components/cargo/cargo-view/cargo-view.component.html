@@ -1,0 +1,48 @@
+<div class="p-fluid p-formgrid grid">
+    <div class="col col-12">
+        <a routerLink="/">
+            <small routerLink="/" class="label-titulo-aba">Início</small>
+        </a>
+        <small>/Cargo</small>
+        <h2 id="page-heading">
+            <span>Visualizar Cargo</span>
+        </h2>
+    </div>
+
+
+    <div class="col-12">
+        <form [formGroup]="cargoForm" disabled>
+            <div class="p-fluid p-formgrid grid">
+                <div class="field col-4 sm:col-4 md:col-3 lg:col-2">
+                    <label for="conselhoId">Conselho:</label>
+                    <input pInputText type="number" id="conselhoId" formControlName="conselhoId" />
+                </div>
+                <div class="field col-8 sm:col-4 md:col-3 lg:col-2">
+                    <label for="tipoCargoNm">Tipo:</label>
+                    <input pInputText type="text" id="tipoCargoNm" formControlName="tipoCargoNm" />
+                </div>
+                <div class="field col-12 sm:col-4 md:col-6 lg:col-5">
+                    <label for="nm_cargo">Nome:</label>
+                    <input pInputText id="nm_cargo" formControlName="nmCargo" />
+                </div>
+                <div class="field col-4 sm:col-4 md:col-4 lg:col-1">
+                    <label for="nmCargo">Sigla:</label>
+                    <input pInputText id="nmCargo" formControlName="nmCargo" />
+                </div>
+                <div class="field col-4 sm:col-4 md:col-4 lg:col-1">
+                    <label for="inExecutivo">Executivo:</label>
+                    <input pInputText id="inExecutivo" formControlName="inExecutivo" />
+                </div>
+                <div class="field col-4 sm:col-4 md:col-4 lg:col-1">
+                    <label for="inAtivo">Status:</label>
+                    <input pInputText id="inAtivo" formControlName="inAtivo" />
+                </div>
+            </div>
+
+            <div class="col-12 md:col-12" style="display: flex; justify-content: flex-end;">
+                <div style="display: flex; justify-content: center;">
+                    <p-button [rounded]="true" [text]="true" label="Fechar" (click)="fechar()"></p-button>
+                </div>
+            </div>
+        </form>
+    </div>

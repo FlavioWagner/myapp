@@ -1,0 +1,68 @@
+<div class="p-fluid p-formgrid grid">
+    <div class="col col-12">
+        <a routerLink="/">
+            <small routerLink="/" class="label-titulo-aba">Início</small>
+        </a>
+        <small>/Cargo</small>
+        <h2 id="page-heading">
+            <span>{{isInsert ? 'Cadastrar' : 'Alterar'}} Cargo</span>
+        </h2>
+    </div>
+
+
+    <div class="col-12">
+        <form [formGroup]="cargoForm" (ngSubmit)="onSubmit()">
+            <div class="p-fluid p-formgrid grid">
+                <div class="field col-4 sm:col-4 md:col-3 lg:col-2">
+                    <label for="conselhoId">Conselho:</label>
+                    <input pInputText type="number" id="conselhoId" formControlName="conselhoId" />
+                </div>
+                <div class="field col-8 sm:col-4 md:col-3 lg:col-2">
+                    <label for="tipoCargoNm">Tipo:</label>
+                    <input pInputText type="text" id="tipoCargoNm" formControlName="tipoCargoNm" />
+                </div>
+                <div class="field col-12 sm:col-4 md:col-6 lg:col-5">
+                    <label for="nm_cargo">Nome:</label>
+                    <input pInputText id="nm_cargo" formControlName="nmCargo" />
+                </div>
+                <div class="field col-4 sm:col-4 md:col-4 lg:col-1">
+                    <label for="nmCargo">Sigla:</label>
+                    <input pInputText id="nmCargo" formControlName="nmCargo" />
+                </div>
+                <div class="field col-4 sm:col-4 md:col-4 lg:col-1">
+                    <label for="inExecutivo">Executivo:</label>
+                    <input pInputText id="inExecutivo" formControlName="inExecutivo" />
+                </div>
+                <div class="field col-4 sm:col-4 md:col-4 lg:col-1">
+                    <label for="inAtivo">Status:</label>
+                    <input pInputText id="inAtivo" formControlName="inAtivo" />
+                </div>
+            </div>
+
+            <div class="col-12 md:col-12" style="display: flex; justify-content: flex-end;">
+                <div style="display: flex; justify-content: center;">
+                    <p-button [rounded]="true" [text]="true" label="Cancelar" (click)="cancelar($event)"></p-button>
+                    <p-button [rounded]="true" [text]="true" label="Salvar" type="submit"
+                        [disabled]="cargoForm.invalid"></p-button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+    <p-confirmDialog #cd>
+        <ng-template pTemplate="headless" let-message>
+            <div class="flex flex-column align-items-center p-5 surface-overlay border-round">
+                <div
+                    class="border-circle bg-primary inline-flex justify-content-center align-items-center h-6rem w-6rem -mt-8">
+                    <i class="pi pi-question text-5xl"></i>
+                </div>
+                <span class="font-bold text-2xl block mb-2 mt-4">{{ message.header }}</span>
+                <p class="mb-0">{{ message.message }}</p>
+                <div class="flex align-items-center gap-2 mt-4">
+                    <button pButton label="Sim" (click)="cd.accept()" class="w-8rem p-button-danger"></button>
+                    <button pButton label="Não" (click)="cd.reject()" class="p-button-outlined w-8rem"></button>
+                </div>
+            </div>
+        </ng-template>
+    </p-confirmDialog>
