@@ -1,3 +1,4 @@
+
 <div class="p-fluid p-formgrid grid">
     <div class="col col-12">
         <a routerLink="/">
@@ -5,48 +6,103 @@
         </a>
         <small>/Cargo</small>
         <h2 id="page-heading">
-            <span>Gerenciar Cargos</span>
+            <span>Gerenciar Cargo</span>
         </h2>
     </div>
 
 
     <div class="col-12">
         <form [formGroup]="cargoForm" (ngSubmit)="onSubmit()">
+            
             <div class="p-fluid p-formgrid grid">
-                <div class="field col-4 sm:col-4 md:col-3 lg:col-2">
-                    <label for="conselhoId">Conselho:</label>
-                    <input pInputText type="number" id="conselhoId" formControlName="conselhoId" />
+                
+                <div class="field col-4 sm:col-4 md:col-4 lg:col-4">
+                    <label for="id">id:</label>
+                    <input pInputText type="text" id="id" formControlName="id" />
                 </div>
-                <div class="field col-8 sm:col-4 md:col-3 lg:col-2">
-                    <label for="tipoCargoNm">Tipo:</label>
-                    <input pInputText type="text" id="tipoCargoNm" formControlName="tipoCargoNm" />                    
+                
+                <div class="field col-4 sm:col-4 md:col-4 lg:col-4">
+                    <label for="idkcloakUsrLogado">idkcloakUsrLogado:</label>
+                    <input pInputText type="text" id="idkcloakUsrLogado" formControlName="idkcloakUsrLogado" />
                 </div>
-                <div class="field col-12 sm:col-4 md:col-6 lg:col-2">
-                    <label for="descricao">Nome:</label>
-                    <input pInputText id="descricao" formControlName="sgCargo" />
+                
+                <div class="field col-4 sm:col-4 md:col-4 lg:col-4">
+                    <label for="sgCargo">sgCargo:</label>
+                    <input pInputText type="text" id="sgCargo" formControlName="sgCargo" />
                 </div>
-                <div class="field col-4 sm:col-4 md:col-4 lg:col-2">
-                    <label for="nmCargo">Sigla:</label>
-                    <input pInputText id="nmCargo" formControlName="nmCargo" />
+                
+                <div class="field col-4 sm:col-4 md:col-4 lg:col-4">
+                    <label for="nmCargo">nmCargo:</label>
+                    <input pInputText type="text" id="nmCargo" formControlName="nmCargo" />
                 </div>
-                <div class="field col-4 sm:col-4 md:col-4 lg:col-2">
-                    <label for="inExecutivo">Executivo:</label>
-                    <p-dropdown formControlName="inExecutivo" [(ngModel)]="executivo" [options]="listSimNao" optionLabel="label" placeholder="Selecione"></p-dropdown>                   
+                
+                <div class="field col-4 sm:col-4 md:col-4 lg:col-4">
+                    <label for="inAtivo">inAtivo:</label>
+                    <input pInputText type="text" id="inAtivo" formControlName="inAtivo" />
                 </div>
-                <div class="field col-4 sm:col-4 md:col-4 lg:col-2">
-                    <label for="inAtivo">Status:</label>
-                    <p-dropdown [options]="listSimNao2" optionLabel="label" optionValue="inAtivo" placeholder="Selecione"></p-dropdown>                   
+                
+                <div class="field col-4 sm:col-4 md:col-4 lg:col-4">
+                    <label for="inExecutivo">inExecutivo:</label>
+                    <input pInputText type="text" id="inExecutivo" formControlName="inExecutivo" />
                 </div>
+                
+                <div class="field col-4 sm:col-4 md:col-4 lg:col-4">
+                    <label for="dsCompetencia">dsCompetencia:</label>
+                    <input pInputText type="text" id="dsCompetencia" formControlName="dsCompetencia" />
+                </div>
+                
+                <div class="field col-4 sm:col-4 md:col-4 lg:col-4">
+                    <label for="inExcluido">inExcluido:</label>
+                    <input pInputText type="text" id="inExcluido" formControlName="inExcluido" />
+                </div>
+                
+                <div class="field col-4 sm:col-4 md:col-4 lg:col-4">
+                    <label for="nuOrdem">nuOrdem:</label>
+                    <input pInputText type="text" id="nuOrdem" formControlName="nuOrdem" />
+                </div>
+                
+                <div class="field col-4 sm:col-4 md:col-4 lg:col-4">
+                    <label for="tipoCargoId">tipoCargoId:</label>
+                    <input pInputText type="text" id="tipoCargoId" formControlName="tipoCargoId" />
+                </div>
+                
+                <div class="field col-4 sm:col-4 md:col-4 lg:col-4">
+                    <label for="tipoCargoNm">tipoCargoNm:</label>
+                    <input pInputText type="text" id="tipoCargoNm" formControlName="tipoCargoNm" />
+                </div>
+                
+                <div class="field col-4 sm:col-4 md:col-4 lg:col-4">
+                    <label for="conselhoId">conselhoId:</label>
+                    <input pInputText type="text" id="conselhoId" formControlName="conselhoId" />
+                </div>
+                
+                <div class="field col-4 sm:col-4 md:col-4 lg:col-4">
+                    <label for="sgUf">sgUf:</label>
+                    <input pInputText type="text" id="sgUf" formControlName="sgUf" />
+                </div>
+                
+                <div class="field col-4 sm:col-4 md:col-4 lg:col-4">
+                    <label for="cargoEstruturaOrganizacionals">cargoEstruturaOrganizacionals:</label>
+                    <input pInputText type="text" id="cargoEstruturaOrganizacionals" formControlName="cargoEstruturaOrganizacionals" />
+                </div>
+                
+                <div class="field col-4 sm:col-4 md:col-4 lg:col-4">
+                    <label for="justificativaAtivacao">justificativaAtivacao:</label>
+                    <input pInputText type="text" id="justificativaAtivacao" formControlName="justificativaAtivacao" />
+                </div>
+                
+                <div class="field col-4 sm:col-4 md:col-4 lg:col-4">
+                    <label for="cargos">cargos:</label>
+                    <input pInputText type="text" id="cargos" formControlName="cargos" />
+                </div>
+                
             </div>
 
             <div class="col-12 md:col-12" style="display: flex; justify-content: flex-end;">
                 <div style="display: flex; justify-content: center;">
-                    <p-button icon="pi pi-search" [rounded]="true" [text]="true" (click)="pesquisar()"
-                        label="Pesquisar"></p-button>
-                    <p-button icon="pi pi-trash" [rounded]="true" [text]="true" (click)="limpar()"
-                        label="Limpar"></p-button>
-                    <p-button icon="pi pi-plus" [rounded]="true" [text]="true" routerLink="new" routerLink="create"
-                        label="Adicionar"></p-button>
+                    <p-button icon="pi pi-search" [rounded]="true" [text]="true" label="Pesquisar" ></p-button>
+                    <p-button icon="pi pi-trash" [rounded]="true" [text]="true" label="Limpar"></p-button>
+                    <p-button icon="pi pi-plus" [rounded]="true" [text]="true" routerLink="new" label="Adicionar"></p-button>
                 </div>
             </div>
         </form>
@@ -54,52 +110,103 @@
 
 
     <div class="col col-12">
-        <p-table [value]="itens" styleClass="p-datatable-striped" selectionMode="single">
-            <ng-template pTemplate="header">
-                <tr>
-                    <th pSortableColumn="conselhoId">Conselho<p-sortIcon field="conselhoId"></p-sortIcon></th>
-                    <th pSortableColumn="tipoCargoNm">Tipo<p-sortIcon field="tipoCargoNm"></p-sortIcon></th>
-                    <th pSortableColumn="sgCargo">Sigla<p-sortIcon field="sgCargo"></p-sortIcon></th>
-                    <th pSortableColumn="nmCargo">Nome<p-sortIcon field="nmCargo"></p-sortIcon></th>
-                    <th pSortableColumn="inExecutivo">Executivo <p-sortIcon field="inExecutivo"></p-sortIcon></th>
-                    <th pSortableColumn="inAtivo">Status<p-sortIcon field="inAtivo"></p-sortIcon></th>
-                    <th>Ação</th>
-                </tr>
-            </ng-template>
-            <ng-template pTemplate="body" let-item>
-                <tr>
-                    <td>{{ item.conselhoId }}</td>
-                    <td>{{ item.tipoCargoNm }}</td>
-                    <td>{{ item.sgCargo }}</td>
-                    <td>{{ item.nmCargo }}</td>
-                    <td>{{ item.inExecutivo }}</td>
-                    <td>{{ item.inAtivo }}</td>
-                    <td>
-                        <p-button icon="pi pi-eye" [rounded]="true" [text]="true"
-                            routerLink="view/{{item.id}}"></p-button>
-                        <p-button icon="pi pi-pencil" [rounded]="true" [text]="true"
-                            routerLink="edit/{{item.id}}"></p-button>
-                        <p-button icon="pi pi-trash" [rounded]="true" [text]="true"
-                            (click)="confirmarDelecao($event,item)"></p-button>
-                    </td>
-                </tr>
-            </ng-template>
-        </p-table>
-    </div>
-
-    <p-confirmDialog #cd>
-        <ng-template pTemplate="headless" let-message>
-            <div class="flex flex-column align-items-center p-5 surface-overlay border-round">
-                <div
-                    class="border-circle bg-primary inline-flex justify-content-center align-items-center h-6rem w-6rem -mt-8">
-                    <i class="pi pi-question text-5xl"></i>
-                </div>
-                <span class="font-bold text-2xl block mb-2 mt-4">{{ message.header }}</span>
-                <p class="mb-0">{{ message.message }}</p>
-                <div class="flex align-items-center gap-2 mt-4">
-                    <button pButton label="Sim" (click)="cd.accept()" class="w-8rem p-button-danger"></button>
-                    <button pButton label="Não" (click)="cd.reject()" class="p-button-outlined w-8rem"></button>
-                </div>
-            </div>
+    <p-table [value]="itens" styleClass="p-datatable-striped" selectionMode="single">
+        <ng-template pTemplate="header">
+            <tr>
+                
+                <th pSortableColumn="id">id<p-sortIcon field="id"></p-sortIcon></th>
+                
+                <th pSortableColumn="idkcloakUsrLogado">idkcloakUsrLogado<p-sortIcon field="idkcloakUsrLogado"></p-sortIcon></th>
+                
+                <th pSortableColumn="sgCargo">sgCargo<p-sortIcon field="sgCargo"></p-sortIcon></th>
+                
+                <th pSortableColumn="nmCargo">nmCargo<p-sortIcon field="nmCargo"></p-sortIcon></th>
+                
+                <th pSortableColumn="inAtivo">inAtivo<p-sortIcon field="inAtivo"></p-sortIcon></th>
+                
+                <th pSortableColumn="inExecutivo">inExecutivo<p-sortIcon field="inExecutivo"></p-sortIcon></th>
+                
+                <th pSortableColumn="dsCompetencia">dsCompetencia<p-sortIcon field="dsCompetencia"></p-sortIcon></th>
+                
+                <th pSortableColumn="inExcluido">inExcluido<p-sortIcon field="inExcluido"></p-sortIcon></th>
+                
+                <th pSortableColumn="nuOrdem">nuOrdem<p-sortIcon field="nuOrdem"></p-sortIcon></th>
+                
+                <th pSortableColumn="tipoCargoId">tipoCargoId<p-sortIcon field="tipoCargoId"></p-sortIcon></th>
+                
+                <th pSortableColumn="tipoCargoNm">tipoCargoNm<p-sortIcon field="tipoCargoNm"></p-sortIcon></th>
+                
+                <th pSortableColumn="conselhoId">conselhoId<p-sortIcon field="conselhoId"></p-sortIcon></th>
+                
+                <th pSortableColumn="sgUf">sgUf<p-sortIcon field="sgUf"></p-sortIcon></th>
+                
+                <th pSortableColumn="cargoEstruturaOrganizacionals">cargoEstruturaOrganizacionals<p-sortIcon field="cargoEstruturaOrganizacionals"></p-sortIcon></th>
+                
+                <th pSortableColumn="justificativaAtivacao">justificativaAtivacao<p-sortIcon field="justificativaAtivacao"></p-sortIcon></th>
+                
+                <th pSortableColumn="cargos">cargos<p-sortIcon field="cargos"></p-sortIcon></th>
+                
+                <th>Ação</th>
+            </tr>
         </ng-template>
-    </p-confirmDialog>
+        <ng-template pTemplate="body" let-item>
+            <tr>
+                
+                <td>{{item.id}}</td>
+                
+                <td>{{item.idkcloakUsrLogado}}</td>
+                
+                <td>{{item.sgCargo}}</td>
+                
+                <td>{{item.nmCargo}}</td>
+                
+                <td>{{item.inAtivo}}</td>
+                
+                <td>{{item.inExecutivo}}</td>
+                
+                <td>{{item.dsCompetencia}}</td>
+                
+                <td>{{item.inExcluido}}</td>
+                
+                <td>{{item.nuOrdem}}</td>
+                
+                <td>{{item.tipoCargoId}}</td>
+                
+                <td>{{item.tipoCargoNm}}</td>
+                
+                <td>{{item.conselhoId}}</td>
+                
+                <td>{{item.sgUf}}</td>
+                
+                <td>{{item.cargoEstruturaOrganizacionals}}</td>
+                
+                <td>{{item.justificativaAtivacao}}</td>
+                
+                <td>{{item.cargos}}</td>
+                            
+                <td>
+                    <p-button icon="pi pi-eye" [rounded]="true" [text]="true" routerLink="view/{{item.id}}"></p-button>
+                    <p-button icon="pi pi-pencil" [rounded]="true" [text]="true" routerLink="edit/{{item.id}}"></p-button>
+                    <p-button icon="pi pi-trash" [rounded]="true" [text]="true" (click)="confirmarDelecao($event,item.id)"></p-button>
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>
+
+<p-confirmDialog #cd>
+<ng-template pTemplate="headless" let-message>
+    <div class="flex flex-column align-items-center p-5 surface-overlay border-round">
+        <div
+            class="border-circle bg-primary inline-flex justify-content-center align-items-center h-6rem w-6rem -mt-8">
+            <i class="pi pi-question text-5xl"></i>
+        </div>
+        <span class="font-bold text-2xl block mb-2 mt-4">{{ message.header }}</span>
+        <p class="mb-0">{{ message.message }}</p>
+        <div class="flex align-items-center gap-2 mt-4">
+            <button pButton label="Sim" (click)="cd.accept()" class="w-8rem p-button-danger"></button>
+            <button pButton label="Não" (click)="cd.reject()" class="p-button-outlined w-8rem"></button>
+        </div>
+    </div>
+</ng-template>
+</p-confirmDialog>

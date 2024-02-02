@@ -4,7 +4,6 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { SERVER_API_URL } from './../../app.constants';
 import { ICargoModel } from './cargo.model';
-import { createRequestOption } from '../../shared/util/request-utils';
 
 type EntityResponseType = HttpResponse<ICargoModel>;
 type EntityArrayResponseType = HttpResponse<ICargoModel[]>;
@@ -13,7 +12,7 @@ type EntityArrayResponseType = HttpResponse<ICargoModel[]>;
   providedIn: 'root'
 })
 export class CargoService {
-  public resourceUrl = 'http://localhost:8081/api/' + 'cargos' ;
+  public resourceUrl = /*SERVER_API_URL +*/ 'http://localhost:8081/api/cargos';
 
   constructor(protected http: HttpClient) {}
 
@@ -33,9 +32,8 @@ export class CargoService {
     return this.http.get<ICargoModel>(`${this.resourceUrl}/${id}`, { observe: 'response' });
   }
 
-  query(req?: any): Observable<EntityArrayResponseType> {
-    const options = createRequestOption(req);
-    return this.http.get<ICargoModel[]>(this.resourceUrl, { params: options, observe: 'response' });
-  }
+  findAll(): Observable<EntityArrayResponseType> {
+    return this.http.get<ICargoModel[]>(`${this.resourceUrl}`, { observe: 'response' });
+  }  
 
 }

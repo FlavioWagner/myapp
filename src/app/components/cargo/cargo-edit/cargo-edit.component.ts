@@ -1,9 +1,10 @@
+
 import { Component, OnInit } from '@angular/core';
 import { CargoModel, ICargoModel } from '../cargo.model';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { CargoService } from '../cargo.service';
 import { ConfirmationService, MessageService } from 'primeng/api';
-import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { InputTextModule } from 'primeng/inputtext';
@@ -14,12 +15,12 @@ import { Location } from '@angular/common';
   selector: 'app-cargo-edit',
   standalone: true,
   imports: [RouterModule,
-    HttpClientModule,
-    FormsModule,
-    ReactiveFormsModule,
-    ButtonModule,
-    ConfirmDialogModule,
-    InputTextModule],
+            HttpClientModule,
+            FormsModule,
+            ReactiveFormsModule,
+            ButtonModule,
+            ConfirmDialogModule,
+            InputTextModule],
   templateUrl: './cargo-edit.component.html',
   styleUrl: './cargo-edit.component.scss',
   providers: [ConfirmationService, CargoService]
@@ -31,32 +32,32 @@ export class CargoEditComponent implements OnInit {
   isInsert: boolean = false;
 
   constructor(private route: ActivatedRoute,
-    private router: Router,
-    private location: Location,
-    private formBuilder: FormBuilder,
-    private messageService: MessageService,
-    private confirmationService: ConfirmationService,
-    private cargoService: CargoService) { }
+              private router: Router,
+              private location: Location,
+              private formBuilder: FormBuilder,
+              private messageService: MessageService,
+              private confirmationService: ConfirmationService,
+              private cargoService: CargoService) { }
 
   async ngOnInit() {
     this.model = new CargoModel();
     this.cargoForm = this.formBuilder.group({
-      id: [this.model.id],
-      idkcloakUsrLogado: [this.model.idkcloakUsrLogado],
-      sgCargo: [this.model.sgCargo],
-      nmCargo: [this.model.nmCargo],
-      inAtivo: [this.model.inAtivo],
-      inExecutivo: [this.model.inExecutivo],
-      dsCompetencia: [this.model.dsCompetencia],
-      inExcluido: [this.model.inExcluido],
-      nuOrdem: [this.model.nuOrdem],
-      tipoCargoId: [this.model.tipoCargoId],
-      tipoCargoNm: [this.model.tipoCargoNm],
-      conselhoId: [this.model.conselhoId],
-      sgUf: [this.model.sgUf],
-      cargoEstruturaOrganizacionals: [this.model.cargoEstruturaOrganizacionals],
-      justificativaAtivacao: [this.model.justificativaAtivacao]
-    });
+                    id:[this.model.id],
+              idkcloakUsrLogado:[this.model.idkcloakUsrLogado],
+              sgCargo:[this.model.sgCargo],
+              nmCargo:[this.model.nmCargo],
+              inAtivo:[this.model.inAtivo],
+              inExecutivo:[this.model.inExecutivo],
+              dsCompetencia:[this.model.dsCompetencia],
+              inExcluido:[this.model.inExcluido],
+              nuOrdem:[this.model.nuOrdem],
+              tipoCargoId:[this.model.tipoCargoId],
+              tipoCargoNm:[this.model.tipoCargoNm],
+              conselhoId:[this.model.conselhoId],
+              sgUf:[this.model.sgUf],
+              cargoEstruturaOrganizacionals:[this.model.cargoEstruturaOrganizacionals],
+              justificativaAtivacao:[this.model.justificativaAtivacao],
+              cargos:[this.model.cargos],});
 
     const id = this.route.snapshot.params['id'];
     this.isInsert = id == null;
@@ -106,13 +107,10 @@ export class CargoEditComponent implements OnInit {
       rejectButtonStyleClass: 'p-button-text p-button-text',
       acceptIcon: 'none',
       rejectIcon: 'none',
-
       accept: () => {
         this.messageService.add({ severity: 'warning', summary: 'Atenção', detail: 'Ação cacelada!' });
         this.previousState();
       }
     });
   }
-
-
 }

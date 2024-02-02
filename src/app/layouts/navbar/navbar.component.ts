@@ -3,11 +3,12 @@ import { MenuItem } from 'primeng/api';
 import { MenubarModule } from 'primeng/menubar';
 import { ToolbarModule } from 'primeng/toolbar';
 import { AvatarModule } from 'primeng/avatar';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
     selector: 'app-navbar',
     standalone: true,
-    imports: [MenubarModule, ToolbarModule, AvatarModule],
+    imports: [RouterModule, MenubarModule, ToolbarModule, AvatarModule],
     templateUrl: './navbar.component.html',
     styleUrl: './navbar.component.scss'
 })

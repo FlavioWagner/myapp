@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { RouterLink, RouterModule } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { MenuItem } from 'primeng/api';
 import { MenuModule } from 'primeng/menu';
 
@@ -10,6 +10,7 @@ import { MenuModule } from 'primeng/menu';
     imports: [RouterModule, CommonModule, MenuModule],
     templateUrl: './menu.component.html',
     styleUrl: './menu.component.scss',
+    providers: [RouterModule]
 })
 export class MenuComponent implements OnInit {
     menu!: MenuItem[];
@@ -21,15 +22,15 @@ export class MenuComponent implements OnInit {
             {
                 label: 'Sistemas',
                 items: [
-                    { label: 'Física', icon: 'pi pi-fw pi-user', routerLink: '/' },
-                    { label: 'Jurídica', icon: 'pi pi-fw pi-building', routerLink: '/' },
+                    { label: 'Cargos', icon: 'pi pi-fw pi-user', routerLink: 'cargos' },
 
                 ]
             },
             {
                 label: 'Configurações',
                 items: [
-                    { label: 'Cargos', icon: 'pi pi-fw pi-user', routerLink: 'cargos' },
+                    { label: 'API', icon: 'pi pi-fw pi-user', routerLink: 'admin/docs' },
+
                 ]
             },
         ];
