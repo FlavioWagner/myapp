@@ -23,6 +23,7 @@ export class MenuComponent implements OnInit {
                 label: 'Sistemas',
                 items: [
                     { label: 'Cargos', icon: 'pi pi-fw pi-user', routerLink: 'cargos' },
+                    { label: 'Estados', icon: 'pi pi-fw pi-user', routerLink: 'estados' },
 
                 ]
             },
